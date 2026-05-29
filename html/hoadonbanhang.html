@@ -7,7 +7,8 @@
 </head>
 <body>
     <h1>HÓA ĐƠN BÁN HÀNG</h1>
-    
+        <link rel="stylesheet"
+          href="../css/style4.css">
     <table border="1">
         <thead>
             <tr>
@@ -23,40 +24,53 @@
             <tr>
                 <td>1</td>
                 <td>Sản phẩm A</td>
-                <td>2</td>
-                <td></td>
+                <td class="soluong">2</td>
+                <td class="dongia">50,000</td>
                 <td>Cái</td>
-                <td></td>
+                <td class="thanhtien">100,000</td>
             </tr>
             <tr>
                 <td>2</td>
                 <td>Sản phẩm B</td>
-                <td>3</td>
-                <td></td>
+                <td class="soluong">3</td>
+                <td class="dongia">30,000</td>
                 <td>Cái</td>
-                <td></td>
+                <td class="thanhtien">90,000</td>
             </tr>
             <tr>
                 <td>3</td>
                 <td>Sản phẩm C</td>
-                <td>1</td>
-                <td></td>
+                <td class="soluong">1</td>
+                <td class="dongia">75,000</td>
                 <td>Cái</td>
-                <td></td>
+                <td class="thanhtien">75,000</td>
             </tr>
             <tr>
                 <td>4</td>
                 <td>Sản phẩm D</td>
-                <td>5</td>
-                <td></td>
+                <td class="soluong">5</td>
+                <td class="dongia">20,000</td>
                 <td>Thùng</td>
-                <td></td>
+                <td class="thanhtien">100,000</td>
             </tr>
-            <tr>
+            <tr id="tongthanhtoan">
                 <td colspan="5"><strong>Tổng Thanh Toán</strong></td>
-                <td><strong></strong></td>
+                <td class="thanhtien"><strong>365,000</strong></td>
             </tr>
         </tbody>
     </table>
+    <script>
+   const = document.getElementsByClassName('soluong');
+    const dongia = document.getElementsByClassName('dongia');
+    const thanhtien = document.getElementsByClassName('thanhtien'); 
+    let tongthanhtoan = 0;
+    for (let i =0; i<sl.length; i++){
+        const sl = parseInt(soluong[i].textContent); 
+        const dg = parseInt(dongia[i].textContent.replace(/,/g, ''));
+        const tt = sl * dg;
+        thanhtien[i].textContent = tt.toLocaleString();
+        tongthanhtoan += tt;
+    }
+    </script>
 </body>
 </html>
