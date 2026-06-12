@@ -83,3 +83,150 @@ h3 {
     color: #0d47a1;
     margin-top: 25px;
 }
+
+/* Trang chi tiết sản phẩm */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-detail {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.product-images {
+    flex: 1.3;
+}
+
+.product-images #mainImage {
+    width: 100%;
+    max-height: 460px;
+    object-fit: contain;
+    display: block;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.thumbnail-images {
+    display: flex;
+    gap: 12px;
+    margin-top: 14px;
+    flex-wrap: wrap;
+}
+
+.thumbnail-images img {
+    width: 92px;
+    height: 92px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #dbe4f0;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.thumbnail-images img:hover {
+    transform: translateY(-2px);
+    border-color: #1976d2;
+}
+
+.product-info {
+    flex: 1;
+}
+
+#productName {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+.rating,
+.price-section,
+.options,
+.actions {
+    margin-bottom: 16px;
+}
+
+.price-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.price {
+    font-size: 28px;
+    font-weight: 700;
+    color: #d32f2f;
+}
+
+.discount {
+    color: #1976d2;
+    font-weight: 600;
+}
+
+.description {
+    line-height: 1.7;
+}
+
+.options input {
+    width: 90px;
+    padding: 8px 10px;
+    border: 1px solid #cfd8e3;
+    border-radius: 8px;
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background: #1976d2;
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #e3eaf3;
+    color: #0d47a1;
+}
+
+.product-details-section {
+    margin-top: 24px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.detail-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #eef2f7;
+}
+
+.detail-item:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 900px) {
+    .product-detail {
+        flex-direction: column;
+    }
+
+    .product-images #mainImage {
+        max-height: 360px;
+    }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <!-- Header content here -->
+    </header>
+
+    <main class="container">
+        <div class="product-detail">
+            <div class="product-images">
+                <img id="mainImage" src="" alt="Hình sản phẩm">
+                <div class="thumbnail-images">
+                    <!-- Thumbnail images here -->
+                </div>
+            </div>
+
+            <div class="product-info">
+                <h1 id="productName"></h1>
+                <div class="rating">
+                    <span id="rating"></span>
+                    <span id="reviews"></span>
+                </div>
+
+                <div class="price-section">
+                    <span class="price" id="price"></span>
+                    <span class="discount" id="discount"></span>
+                </div>
+
+                <p class="description" id="description"></p>
+
+                <div class="options">
+                    <label for="quantity">Số lượng:</label>
+                    <input type="number" id="quantity" value="1" min="1">
+                </div>
+
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="addToCart()">Thêm vào giỏ</button>
+                    <button class="btn btn-secondary" onclick="buyNow()">Mua ngay</button>
+                </div>
+            </div>
+        </div>
+
+        <section class="product-details-section">
+            <h2>Thông tin chi tiết</h2>
+            <div id="detailContent"></div>
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/chi-tiet.js"></script>
+</body>
+</html>

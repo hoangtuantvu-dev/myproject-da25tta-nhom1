@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
 	const modal = document.getElementById('product-modal');
 	const modalImage = document.getElementById('product-modal-image');
@@ -48,3 +49,50 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	});
 });
+=======
+function createItemV2(obj)
+{
+    const list = document.getElementById("product-list");
+
+    list.innerHTML += `
+        <div class="col-md-4 mb-3 d-flex">
+
+            <div class="card product-item h-100">
+
+                <div class="product-image">
+                    <img class="card-img-top"
+                         src="${obj.image}"
+                         alt="${obj.name}">
+                </div>
+
+                <div class="card-body product-info d-flex flex-column">
+
+                    <div class="product-tag">
+                        ${obj.tag || ""}
+                    </div>
+
+                    <h4 class="card-title">
+                        ${obj.name}
+                    </h4>
+
+                    <h5 class="card-text">
+                        ${obj.price}
+                    </h5>
+
+                    <p class="card-text flex-grow-1">
+                        ${obj.description}
+                    </p>
+
+                    <a href="${obj.linkProduct}"
+                       class="card-link">
+                        Xem chi tiết
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+}
+>>>>>>> 0478ffe (First commit)
