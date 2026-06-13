@@ -4,24 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chi tiết sản phẩm</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/stylechitiet.css">
 </head>
 <body>
-    <header>
-        <!-- Header content here -->
-    </header>
-
-    <main class="container">
-        <div class="product-detail">
+    <button type="button" class="back-button" onclick="goBack()" aria-label="Quay lại danh sách sản phẩm">← Quay lại</button>
+    <main class="page-shell">
+        <section class="hero-card">
             <div class="product-images">
-                <img id="mainImage" src="" alt="Hình sản phẩm">
-                <div class="thumbnail-images">
-                    <!-- Thumbnail images here -->
+                <div class="image-frame">
+                    <span class="image-badge" id="stockBadge">Còn hàng</span>
+                    <img id="mainImage" src="" alt="Hình sản phẩm">
                 </div>
+                <div class="thumbnail-images"></div>
             </div>
 
             <div class="product-info">
+                <div class="breadcrumb" id="breadcrumb">Danh sách sản phẩm</div>
+                <div class="product-meta">
+                    <span class="product-tag" id="productTag"></span>
+                    <span class="stock-badge" id="stockBadgeText"></span>
+                </div>
+
                 <h1 id="productName"></h1>
+
                 <div class="rating">
                     <span id="rating"></span>
                     <span id="reviews"></span>
@@ -35,25 +40,60 @@
                 <p class="description" id="description"></p>
 
                 <div class="options">
-                    <label for="quantity">Số lượng:</label>
-                    <input type="number" id="quantity" value="1" min="1">
+                    <label for="quantity">Số lượng</label>
+                    <div class="quantity-stepper">
+                        <button type="button" class="stepper-btn" onclick="changeQuantity(-1)">-</button>
+                        <input type="number" id="quantity" value="1" min="1">
+                        <button type="button" class="stepper-btn" onclick="changeQuantity(1)">+</button>
+                    </div>
                 </div>
 
                 <div class="actions">
-                    <button class="btn btn-primary" onclick="addToCart()">Thêm vào giỏ</button>
-                    <button class="btn btn-secondary" onclick="buyNow()">Mua ngay</button>
+                    <button class="action-btn primary" onclick="addToCart()">Thêm vào giỏ</button>
+                    <button class="action-btn secondary" onclick="buyNow()">Mua ngay</button>
+                    <button class="action-btn ghost" onclick="compareProduct()">So sánh sản phẩm</button>
                 </div>
+
+                <p class="share-feedback" id="shareFeedback"></p>
             </div>
-        </div>
+        </section>
 
         <section class="product-details-section">
-            <h2>Thông tin chi tiết</h2>
+            <div class="section-head">
+                <h2>Thông tin chi tiết</h2>
+                <p>Tổng hợp dữ liệu nhanh và các đặc điểm nổi bật của sản phẩm.</p>
+            </div>
+            <div class="quick-facts" id="quickFacts"></div>
             <div id="detailContent"></div>
         </section>
-    </main>
 
-    <footer>
-    </footer>
+        <section class="related-products-section">
+            <div class="section-head">
+                <h2>Sản phẩm liên quan</h2>
+                <p>Gợi ý những mẫu cùng phân loại để bạn so sánh nhanh hơn.</p>
+            </div>
+            <div id="relatedProducts" class="related-products"></div>
+        </section>
+
+        <section class="comparison-section">
+            <div class="section-head">
+                <h2>Bảng so sánh</h2>
+                <p>Chọn một xe bất kỳ để so sánh trực tiếp với sản phẩm hiện tại.</p>
+            </div>
+            <div class="comparison-controls">
+                <div class="control-group comparison-select-group">
+                    <label for="comparisonTarget">Chọn xe để so sánh</label>
+                    <select id="comparisonTarget">
+                        <option value="">-- Chọn xe --</option>
+                    </select>
+                </div>
+                <button type="button" class="action-btn comparison-action" onclick="compareProduct()">So sánh xe đã chọn</button>
+            </div>
+            <div id="comparisonPanel" class="comparison-panel">
+                <p class="empty-state">Chọn một xe ở trên để xem đối chiếu.</p>
+            </div>
+        </section>
+    </main>
 
     <script src="../js/data.js"></script>
     <script src="../js/chi-tiet.js"></script>
